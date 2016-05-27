@@ -26,6 +26,7 @@ import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.container.PreMatching;
 import java.io.IOException;
 import java.util.Map;
 
@@ -33,6 +34,7 @@ import java.util.Map;
  * @author lishen
  */
 @Priority(Integer.MIN_VALUE + 1)
+@PreMatching
 public class RpcContextFilter implements ContainerRequestFilter, ClientRequestFilter {
 
     private static final String DUBBO_ATTACHMENT_HEADER = "Dubbo-Attachments";
